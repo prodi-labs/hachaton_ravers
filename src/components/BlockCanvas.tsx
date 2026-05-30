@@ -172,7 +172,7 @@ export function BlockCanvas() {
   const empty = blocks.length === 0 && !calculating;
 
   return (
-    <div className="flex flex-1 flex-col overflow-y-auto bg-gray-50 p-8">
+    <div className="flex min-w-0 flex-1 flex-col overflow-y-auto bg-gray-50 p-8">
       <h2 className="mb-6 text-lg font-semibold text-gray-700">Building Blocks</h2>
 
       {empty && (
