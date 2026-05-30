@@ -46,4 +46,6 @@ The demo has a clear money shot: the building block appearing live, with a real 
 
 ### :closed*lock_with_key: Security — \_did they handle secrets, auth, and user input like adults?*
 
-Security handled by Aikido - check the report for more details.
+Security handled by Aikido - check the report: No bugs found! Secure app! 
+
+for more details: https://app.aikido.dev/agentic-review/f19e79e2-a882-8dea-93f6-e4bc8dc01a19
