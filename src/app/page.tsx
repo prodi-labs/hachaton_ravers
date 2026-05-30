@@ -11,10 +11,6 @@ export default function Page() {
     <SandboxProvider>
       <SandboxTools />
       <main className="flex h-screen flex-col">
-        <header className="border-b border-gray-200 bg-white px-8 py-4">
-          <h1 className="text-xl font-semibold text-gray-900">Private Sandbox</h1>
-          <p className="text-sm text-gray-500">Packaging Department — cost optimization</p>
-        </header>
         <TargetTracker />
         <BlockCanvas />
       </main>
@@ -22,8 +18,6 @@ export default function Page() {
         defaultOpen={true}
         labels={{
           modalHeaderTitle: "Sandbox Assistant",
-          welcomeMessageText:
-            "Hi! FP&A set your yearly target: cut operational costs by €500,000. Shall we create an initiative to get there?",
         }}
         input={{ showDisclaimer: false }}
       />

@@ -10,13 +10,20 @@ Google ADK + Gemini agent (AG-UI) ⇄ Next.js + CopilotKit frontend.
 ## Run
 
 1. Install: `npm install` (also runs `uv sync` for the Python agent).
-2. Add your key to `agent/.env`:
-   ```
-   GOOGLE_API_KEY=your_key_here
-   ```
-3. Start both processes: `npm run dev`
+2. Start both processes: `npm run dev`
    - UI → http://localhost:3000
    - Agent → http://localhost:8000
+
+## Applying changes while running
+
+- **Frontend** (`src/`): Next.js hot-reloads automatically — save the file and the
+  browser updates. No restart needed.
+- **Agent** (`agent/`): uvicorn watches the `agent/` folder (`reload=True` in
+  `agent/main.py`), so editing the agent prompt or logic (`main.py`, `formula_engine.py`)
+  and saving restarts the server automatically. Refresh the browser to start a new chat
+  session against the updated agent.
+  - If you ever need a manual restart: stop `npm run dev` (Ctrl+C) and start it again, or
+    restart only the agent with `npm run dev:agent`.
 
 ## How it works
 
@@ -35,11 +42,3 @@ Google ADK + Gemini agent (AG-UI) ⇄ Next.js + CopilotKit frontend.
   Target / Planned / Gap. Chat UI is `CopilotSidebar`.
 - **Runtime** (`src/app/api/copilotkit/[[...slug]]/route.ts`): CopilotKit runtime bridging
   the browser to the Python agent over AG-UI.
-
-## Demo flow
-
-1. On load the assistant states the €500,000 target and offers to start.
-2. *"Increase line speed by 10%"* → a pending building block appears with its causal chain,
-   assumptions, and a deterministic saving; confirm it (chat "yes" or **Use Initiative**).
-3. The tracker updates (Target / Planned / Gap) and the assistant prompts the next
-   initiative, looping until the gap closes. Try also *"set target to 800k"*.

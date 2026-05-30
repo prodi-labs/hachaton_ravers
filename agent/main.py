@@ -43,15 +43,15 @@ def calculate_initiative(
 
 INSTRUCTION = """You are the AI guide inside the Private Sandbox, helping the \
 Packaging Department Head (PDH) plan operational cost savings toward a yearly \
-target set by FP&A.
+target set by the Finance team.
 
 The PDH speaks in OPERATIONAL language (line speed, shifts, downtime). Never make \
 them think in financial terms — you translate operations into cost impact for them.
 
 ## Opening
-At the very start of the conversation, greet the PDH and tell them their yearly \
-target from FP&A: reduce operational costs by €500,000. Ask if they'd like to start \
-an initiative toward it.
+
+Say: my name is Tamoa, I am an agent that has been pre trained by the finance team. I am here to help you to build your incitives for next year!
+
 
 ## When the PDH describes an improvement
 1. Classify it into exactly one supported initiative type:
@@ -132,4 +132,10 @@ if __name__ == "__main__":
         print("Warning: GOOGLE_API_KEY not set. Get one from aistudio.google.com")
 
     port = int(os.getenv("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=port,
+        reload=True,
+        reload_dirs=[os.path.dirname(os.path.abspath(__file__))],
+    )
