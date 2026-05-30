@@ -6,8 +6,8 @@ import "./globals.css";
 import "@copilotkit/react-core/v2/styles.css";
 
 export const metadata: Metadata = {
-  title: "Block Canvas",
-  description: 'A chat where saying "block" adds a block to the canvas.',
+  title: "Private Sandbox",
+  description: "Optimize operational cost to hit the target.",
 };
 
 export default function RootLayout({
