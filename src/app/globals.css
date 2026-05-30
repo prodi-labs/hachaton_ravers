@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The "Powered by CopilotKit" license banner is removed by <HideCopilotBanner>.
+   Reclaim the bottom space it reserved under the chat input. */
+:root {
+  --copilotkit-license-banner-offset: 0px !important;
+}
+
+/* Keep the last chat message clear of the floating input box. */
+.copilotKitMessages {
+  padding-bottom: 40px;
+}
